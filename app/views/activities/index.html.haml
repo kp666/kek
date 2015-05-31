@@ -1,18 +1,27 @@
 .container
   .row
     .col-lg-12
-      %h1 Activities
+      .pull-left
+        %h1 Activities
+      .pull-right.new-activity-button
+        = link_to 'New activity', new_activity_path, class: 'btn btn-primary btn-lg'
+      .clearfix
       %hr
-
       - @activities.each do |activity|
         .activity
           = link_to activity, class: 'title-link' do
             %h2= activity.title
-          %em
-            Posted by
-            = activity.user.name
-            on
-            = activity.created_at.strftime('%e %b %Y')
+            %ul.list-inline
+              - if activity.user == current_user
+                %li= link_to 'edit', edit_activity_path(activity)
+                |
+                %li= link_to 'delete', activity, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              %li
+                %em
+                  Posted by
+                  = activity.user.name
+                  on
+                  = activity.created_at.strftime('%e %b %Y')
           %p= truncate_html activity.description.html_safe, length: 1200, omission: (link_to '.. read more', activity)
           %hr
 

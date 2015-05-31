@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ../../../vendor/assets/javascripts/.
-//= require turbolinks
+// require turbolinks
 //= require ckeditor/init
 //= require_tree .
 
