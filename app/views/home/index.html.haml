@@ -17,12 +17,37 @@
           .panel-heading
             %h3.panel-title Recent activities 
           .panel-body
-            Panel content
+            .activity-info
+              .media
+                .media-left
+                  %a{:href => "#"}
+                    %img.media-object.pull-left{:alt => "...", :src => "http://hd.wallpaperswide.com/thumbs/android_logo-t2.jpg", hieght: "64px", width: "64px"}/
+                .media-body.recent-activity
+                  %h4.media-heading Built Android environment based on BSD
+                  %p Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id eni.
+
+
       .col-lg-4.col-sm-6
         .panel.panel-default
           .panel-heading
             %h3.panel-title Events
           .panel-body
-            Panel content
+            .activity-info
+              .media
+                .media-left.pull-left
+                  .date
+                    %p
+                      25
+                      %span May 2015
+                .media-body.recent-activity
+                  %h4.media-heading HackBeach
+                  %h5
+                    25 May 2015 - 4 July 2015
+                    %br
+                    Kovalam, Trivandrum
+
+
+
+
       .col-lg-4.col-sm-6
         %a{class: "twitter-timeline", href: "https://twitter.com/ershus", data: {'widget-id' => "604951134738915328"}} Tweets by @ershus
