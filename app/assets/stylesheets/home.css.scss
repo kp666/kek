@@ -1,0 +1,13 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.intro-header {
+  height: 500px;
+  background: url(../images/kovalam.jpg) no-repeat center center !important;
+}
+
+.intro-message {
+  padding-top: 10% !important;
+  padding-bottom: 10% !important;
+}

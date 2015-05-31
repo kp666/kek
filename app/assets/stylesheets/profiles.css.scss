@@ -1,0 +1,26 @@
+// Place all the styles related to the Profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-left-content {
+  border-right: 1px solid #ccc;
+}
+
+.profile-picture {
+  padding-top: 25px;
+}
+
+
+.photos img {
+  max-width: 100px;
+  margin-top: 5px;
+}
+
+
+span.edit-icon {
+  font-size: 15px;
+}
+
+.edit-field-container {
+  display: none;
+}
