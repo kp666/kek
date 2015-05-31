@@ -23,5 +23,6 @@
                   on
                   = activity.created_at.strftime('%e %b %Y')
           %p= truncate_html activity.description.html_safe, length: 1200, omission: (link_to '.. read more', activity)
+          .clearfix
           %hr
 
