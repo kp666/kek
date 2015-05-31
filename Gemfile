@@ -20,6 +20,9 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem "letter_opener", :group => :development
+gem 'simple_form'
+gem 'ckeditor'
+gem 'truncate_html'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
