@@ -23,6 +23,7 @@ gem "letter_opener", :group => :development
 gem 'simple_form'
 gem 'ckeditor'
 gem 'truncate_html'
+gem "paperclip", "~> 4.2"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
