@@ -3,7 +3,7 @@
     .row
       .col-lg-12
         .intro-message
-          %h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit 
+          %h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
           %hr.intro-divider/
           %ul.list-inline
             %li
@@ -15,25 +15,24 @@
       .col-lg-4.col-sm-6
         .panel.panel-default
           .panel-heading
-            %h3.panel-title Recent activities 
+            %h3.panel-title Recent activities
           .panel-body
-            .activity-info
-              .media
-                .media-left
-                  %a{:href => "#"}
-                    %img.media-object.pull-left{:alt => "...", :src => "http://www.netbsd.org/images/NetBSD.png", hieght: "64px", width: "64px"}/
-                .media-body.recent-activity
-                  %h4.media-heading One day workshop on NetBSD 
-                  %p Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id eni.
+            - @activities.each do |activity|
+              .activity-info
+                .media
+                  .media-left
+                    = link_to activity, class: 'pull-left' do
+                      - img = Nokogiri::HTML.fragment(activity.description).search("img").first
+                      - if img
+                        = image_tag img.attributes['src'].value, height: '64px', width: '64px', class: 'img-rounded'
+                      - else
+                        %i.fa.fa-picture-o{ style: 'font-size: 64px' }
 
-            .activity-info
-              .media
-                .media-left
-                  %a{:href => "#"}
-                    %img.media-object.pull-left{:alt => "...", :src => "http://hd.wallpaperswide.com/thumbs/android_logo-t2.jpg", hieght: "64px", width: "64px"}/
-                .media-body.recent-activity
-                  %h4.media-heading Built Android environment based on BSD
-                  %p Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id eni.
+                  .media-body.recent-activity
+                    %h4.media-heading
+                      = link_to activity.title, activity
+                    %p= Nokogiri::HTML(activity.description).text.truncate(100, omission: (link_to '.. read more', activity)).html_safe
+              %br
 
 
 

@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'ckeditor'
 gem 'truncate_html'
 gem "paperclip", "~> 4.2"
+gem 'nokogiri'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
