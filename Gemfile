@@ -26,6 +26,7 @@ gem 'ckeditor'
 gem 'truncate_html'
 gem "paperclip", "~> 4.2"
 gem 'nokogiri'
+gem 'rails_12factor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
