@@ -1,0 +1,35 @@
+.container
+  .row
+    .col-lg-12
+      .main-heading
+        .pull-left
+          %h2 Events
+        .pull-right.new-button
+          = link_to 'New event', new_event_path, class: 'btn btn-primary btn-lg'
+        .clearfix
+      %hr.dotted
+      %br
+
+      - @events.each do |event|
+        .event
+          .row
+            .col-lg-3
+              .date
+                %p
+                  25
+                  %span may 2013
+            .col-lg-9
+
+              %h3= event.title
+              - if event.user == current_user
+                %ul.list-inline
+                  %li= link_to 'edit', edit_event_path(event)
+                  |
+                  %li= link_to 'delete', event, method: :delete, data: { confirm: 'Are  you sure?' }
+              %em
+                %strong
+                  = event.from.strftime('%e %b %Y')
+                  to
+                  = event.to.strftime('%e %b %Y')
+              %p= event.description.html_safe
+          %hr

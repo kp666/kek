@@ -30,3 +30,21 @@ footer {
 a.title-link:hover {
   text-decoration: none;
 }
+
+.new-button {
+  padding-top: 15px;
+}
+
+
+p, em, a {
+  font-family: "Benton Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+
+hr.dotted {
+  border: none;
+  border-top: 8px dotted #DBD7D7;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+}

@@ -9,66 +9,12 @@
             %li
               %a.btn.btn-primary.btn-lg
                 %span Read more and apply
+
 .content-section-a
   .container
     .row
-      .col-lg-4.col-sm-6
-        .panel.panel-default
-          .panel-heading
-            %h3.panel-title Recent activities
-          .panel-body
-            - @activities.each do |activity|
-              .activity-info
-                .media
-                  .media-left
-                    = link_to activity, class: 'pull-left' do
-                      - img = Nokogiri::HTML.fragment(activity.description).search("img").first
-                      - if img
-                        = image_tag img.attributes['src'].value, height: '64px', width: '64px', class: 'img-rounded'
-                      - else
-                        %i.fa.fa-picture-o{ style: 'font-size: 64px' }
-
-                  .media-body.recent-activity
-                    %h4.media-heading
-                      = link_to activity.title, activity
-                    %p= Nokogiri::HTML(activity.description).text.truncate(100, omission: (link_to '.. read more', activity)).html_safe
-              %br
-
-
-
-
-      .col-lg-4.col-sm-6
-        .panel.panel-default
-          .panel-heading
-            %h3.panel-title Events
-          .panel-body
-            .event-info
-              .media
-                .media-left.pull-left
-                  .date
-                    %p
-                      25
-                      %span May 2015
-                .media-body.recent-event
-                  %h4.media-heading HackBeach
-                  %h5
-                    25 May 2015 - 4 July 2015
-                    %br
-                    Kovalam, Trivandrum
-
-            .event-info
-              .media
-                .media-left.pull-left
-                  .date
-                    %p
-                      2
-                      %span Dec 2015
-                .media-body.recent-event
-                  %h4.media-heading Kernel Programming workshop
-                  %h5
-                    25 May 2015 - 4 July 2015
-                    %br
-                    Kovalam, Trivandrum
+      = render 'recent_activities'
+      = render 'recent_events'
 
 
 
