@@ -3,18 +3,27 @@
     .panel-heading
       %h3.panel-title Events
     .panel-body
-      .event-info
-        .media
-          .media-left.pull-left
-            .date
+      - @events.each do |event|
+        .event-info
+          .media
+            .media-left.pull-left
+              .date
+                %p
+                  = event.from.strftime('%e')
+                  %span= event.from.strftime('%b %Y')
+            .media-body.recent-event
+              %h4.media-heading= event.title
               %p
-                25
-                %span May 2015
-          .media-body.recent-event
-            %h4.media-heading HackBeach
-            %p
-              %i.fa.fa-clock-o
-              9:00 AM - 5:00 PM
-              %br
-              %i.fa.fa-map-marker
-              Kovalam, Trivandrum
+                %i.fa.fa-clock-o
+                - if event.from.to_date == event.to.to_date
+                  = event.from.strftime('%I:%M %p')
+                  - if event.from != event.to
+                    to
+                    = event.to.strftime('%I:%M %p')
+                - else
+                  = event.from.strftime('%e %b')
+                  to
+                  = event.to.strftime('%e %b')
+                %br
+                %i.fa.fa-map-marker
+                = event.location
