@@ -11,7 +11,7 @@
       - @activities.each do |activity|
         .activity
           = link_to activity, class: 'title-link' do
-            %h2= activity.title
+            %p.heading= activity.title
             %ul.list-inline
               - if activity.user == current_user
                 %li= link_to 'edit', edit_activity_path(activity)

@@ -13,23 +13,18 @@
       - @events.each do |event|
         .event
           .row
-            .col-lg-3
-              .date
-                %p
-                  25
-                  %span may 2013
-            .col-lg-9
-
-              %h3= event.title
+            .col-lg-1
+              %i.fa.fa-calendar-o{ style: 'font-size: 80px' }
+            .col-lg-11
+              %p.heading= event.title
               - if event.user == current_user
                 %ul.list-inline
                   %li= link_to 'edit', edit_event_path(event)
                   |
                   %li= link_to 'delete', event, method: :delete, data: { confirm: 'Are  you sure?' }
-              %em
-                %strong
-                  = event.from.strftime('%e %b %Y')
-                  to
-                  = event.to.strftime('%e %b %Y')
-              %p= event.description.html_safe
+              %strong
+                = event.from.strftime('%e %b %Y %I:%M %p')
+                to
+                = event.to.strftime('%e %b %Y %I:%M %p')
+              %p{ style: 'margin-top: 15px' }= event.description.html_safe
           %hr
