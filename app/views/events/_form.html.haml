@@ -1,12 +1,12 @@
-= simple_form_for(@event) do |f|
-  = f.error_notification
+= simple_form_for(@event, html: { class: 'form-horizontal' }) do |f|
+  = f.input :title, wrapper_html: { style: 'margin: 0' }
+  %br
+  = f.label :description
+  = f.cktext_area :description
+  = f.input :location, wrapper_html: { style: 'margin: 0' }
+  = f.input :from
+  = f.input :to
 
-  .form-inputs
-    = f.input :title
-    = f.input :description
-    = f.input :user_id
-    = f.input :from
-    = f.input :to
-
-  .form-actions
-    = f.button :submit
+  %br
+  = f.button :submit, class: 'btn btn-success'
+  = link_to 'Cancel', activities_path, class: 'btn btn-default'
