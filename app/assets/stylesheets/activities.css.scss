@@ -2,3 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.activity {
+  .heading {
+      text-align: center;
+      color: #333;
+      font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+      font-size: 56px;
+  }
+
+  .author-info {
+    text-align: center;
+  }
+}
