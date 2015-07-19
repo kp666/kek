@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ../../../vendor/assets/javascripts/.
+//= require moment
+//= require bootstrap-datetimepicker
 // require turbolinks
 //= require ckeditor/init
 //= require_tree .

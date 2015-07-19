@@ -27,6 +27,8 @@ gem 'truncate_html'
 gem "paperclip", "~> 4.2"
 gem 'nokogiri'
 gem 'rails_12factor'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

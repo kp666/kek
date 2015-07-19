@@ -25,5 +25,6 @@
                   to
                   = event.to.strftime('%e %b')
                 %br
-                %i.fa.fa-map-marker
-                = event.location
+                - if event.location.present?
+                  %i.fa.fa-map-marker
+                  = event.location

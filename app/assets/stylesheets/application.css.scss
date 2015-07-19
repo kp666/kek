@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require font-awesome
+ *= require bootstrap-datetimepicker
  *= require_tree ../../../vendor/assets/stylesheets/.
  *= require_self
  */
@@ -54,3 +55,11 @@ p.heading {
   line-height: 1.35;
   font-weight: normal;
 }
+
+.nav-active {
+  background-color: #eee;
+  &:hover {
+    background-color: #eee !important;
+  }
+}
+
