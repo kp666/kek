@@ -19,10 +19,10 @@
         %li
           = link_to 'Events', events_path, class: set_active_class(events_path)
         %li
-          %a{href: faq_path } FAQ
+          = link_to 'FAQ', faq_path, class: set_active_class(faq_path)
         %li
-          %a{href: contact_path } Contact
+          = link_to 'Contact', contact_path, class: set_active_class(contact_path)
         %li
-          %a{href: about_path } About
-        / %li
-        /   %a{href: '#'} Login
+          = link_to 'About', about_path, class: set_active_class(about_path)
+        %li
+          = link_to 'Login', new_user_session_path, class: set_active_class(new_user_session_path)
