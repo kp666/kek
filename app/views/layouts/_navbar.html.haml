@@ -13,13 +13,13 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li
-          = link_to 'Activities', activities_path, class: set_active_class(activities_path)
+          = link_to "News", activities_path, class: set_active_class(activities_path)
         %li
-          %a{href: "#"} Participants
+          %a{href: "#"} People
         %li
           = link_to 'Events', events_path, class: set_active_class(events_path)
         %li
-          %a{href: '#'} FAQ
+          %a{href: faq_path } FAQ
         %li
           %a{href: '#'} Contact
         %li

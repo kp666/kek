@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/faq' => 'faq#index'
+
   resources :events
 
   mount Ckeditor::Engine => '/ckeditor'
