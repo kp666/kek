@@ -4,5 +4,5 @@
 
 $ ->
   $('.datepicker').datetimepicker({
-    format: 'Y/m/d A g:i'
+    format: 'y/m/d A g:i'
     })
