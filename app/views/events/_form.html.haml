@@ -1,11 +1,11 @@
 = simple_form_for(@event, html: { class: 'form-horizontal' }) do |f|
   = f.input :title, wrapper_html: { style: 'margin: 0' }
-  = f.input :from, as: :string, input_html: { class: 'datepicker' }, wrapper_html: { style: 'margin: 0' }
-  = f.input :to, as: :string, input_html: { class: 'datepicker' }, wrapper_html: { style: 'margin: 0' }
   %br
   = f.label :description
   = f.cktext_area :description
   = f.input :location, wrapper_html: { style: 'margin: 0' }
+  = f.input :from
+  = f.input :to
 
   %br
   = f.button :submit, class: 'btn btn-success'
