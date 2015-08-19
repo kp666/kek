@@ -3,12 +3,13 @@
     .row
       .col-lg-12
         .intro-message
-          %h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          %h2 Local tech for local problems
           %hr.intro-divider/
           %ul.list-inline
             %li
-              %a.btn.btn-primary.btn-lg
-                %span Read more and apply
+              = link_to faq_path, class: 'btn btn-primary btn-lg' do
+                %span
+                  Read more
 
 .content-section-a
   .container
