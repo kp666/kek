@@ -7,19 +7,15 @@
         .event-info
           .media
             .media-left.pull-left
-              .date
-                %p
-                  = event.from.strftime('%e')
-                  %span= event.from.strftime('%b %Y')
+              %i.fa.fa-calendar.calendar-icon{ style: 'font-size: 44px' }
+
             .media-body.recent-event
               %h4.media-heading= event.title
               %p
                 %i.fa.fa-clock-o
                 - if event.from.to_date == event.to.to_date
+                  = event.from.strftime('%e %b')
                   = event.from.strftime('%I:%M %p')
-                  - if event.from != event.to
-                    to
-                    = event.to.strftime('%I:%M %p')
                 - else
                   = event.from.strftime('%e %b')
                   to
