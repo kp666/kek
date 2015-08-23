@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/faq' => 'faq#index'
   get '/contact' => 'contact#index'
   get '/about' => 'about#index'
+  get '/login' => redirect('/users/sign_in')
 
   resources :events
 
