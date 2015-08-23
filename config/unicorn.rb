@@ -6,6 +6,8 @@ root = `pwd`.strip
 
 listen "#{root}/tmp/sockets/unicorn.sock", :backlog => 64
 pid "#{root}/tmp/pids/unicorn.pid"
+stderr_path "#{root}/log/unicorn.stderr.log"
+stdout_path "#{root}/log/unicorn.stdout.log"
 
 before_fork do |server, worker|
 
