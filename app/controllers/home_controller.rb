@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
     @events = Event.all
-    @activities = Activity.all
+    @stories = Story.all
   end
 end

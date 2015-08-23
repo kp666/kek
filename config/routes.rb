@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :events
 
   mount Ckeditor::Engine => '/ckeditor'
-  resources :activities
+  resources :stories
 
   devise_for :users
   resources :users

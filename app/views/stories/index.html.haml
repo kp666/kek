@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      .main-heading
+        - if user_signed_in?
+          .pull-right.new-button
+            = link_to 'New story', new_story_path, class: 'btn btn-default'
+        .clearfix
+      - @stories.each do |story|
+        .story
+          = link_to story, class: 'title-link' do
+            %p.heading= story.title
+          %ul.list-inline.author-info
+            %li
+              %em
+                = story.user.name
+                on
+                = story.created_at.strftime('%e %b')
+            - if story.user == current_user
+              %li= link_to 'edit', edit_story_path(story)
+              |
+              %li= link_to 'delete', story, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %br
+          %p= truncate_html story.description.html_safe, length: 1200, omission: (link_to '.. read more', story)
+          .clearfix
+          %hr
+

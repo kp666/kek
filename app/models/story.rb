@@ -1,4 +1,4 @@
-class Activity < ActiveRecord::Base
+class Story < ActiveRecord::Base
   belongs_to :user
   default_scope { order('created_at desc') }
   after_create :set_permalink

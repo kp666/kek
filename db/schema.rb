@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150602075027) do
 
-  create_table "activities", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "permalink"
-  end
-
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -47,6 +38,15 @@ ActiveRecord::Schema.define(version: 20150602075027) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
+  end
+
+  create_table "stories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "permalink"
   end
 
   create_table "users", force: true do |t|
