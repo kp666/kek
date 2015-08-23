@@ -5,6 +5,7 @@ preload_app true
 root = `pwd`.strip
 
 listen "#{root}/tmp/sockets/unicorn.sock", :backlog => 64
+pid "#{root}/tmp/pids/unicorn.pid"
 
 before_fork do |server, worker|
 
