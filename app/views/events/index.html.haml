@@ -2,8 +2,9 @@
   .row
     .col-lg-12
       .main-heading
-        .pull-right.new-button
-          = link_to 'New event', new_event_path, class: 'btn btn-default'
+        - if user_signed_in?
+          .pull-right.new-button
+            = link_to 'New event', new_event_path, class: 'btn btn-default'
         .clearfix
       %br
 
