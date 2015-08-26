@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :stories
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
 
   root 'home#index'
