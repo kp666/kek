@@ -38,10 +38,8 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      execute 'kill -9 `cat /home/deployer/apps/kek/shared/tmp/pids/unicorn.pid`'
+      execute 'cd /home/deployer/apps/kek/current && ~/.rvm/bin/rvm default do bundle exec unicorn -E production -c config/unicorn.rb -D'
     end
   end
 
