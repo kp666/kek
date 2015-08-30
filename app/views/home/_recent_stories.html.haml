@@ -11,10 +11,10 @@
                 - if (img = extract_first_image(story.description))
                   = image_tag img.attributes['src'].value, height: '64px', width: '64px', class: 'img-rounded'
                 - else
-                  %i.fa.fa-picture-o{ style: 'font-size: 64px' }
+                  %i.fa.fa-picture-o{ style: 'font-size: 64px; color: rgba(175, 164, 164, 0.39);' }
 
             .media-body.recent-story
-              %h4.media-heading
+              %h4.media-heading.story-panel-heading
                 = link_to story.title, story
               %p= truncate_text(story.description, story)
         %br
