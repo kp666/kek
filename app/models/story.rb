@@ -3,6 +3,8 @@ class Story < ActiveRecord::Base
   default_scope { order('created_at desc') }
   after_create :set_permalink
 
+  validates :title, presence: true
+
   def to_param
     permalink
   end
