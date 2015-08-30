@@ -44,3 +44,5 @@ namespace :deploy do
   end
 
 end
+
+after 'deploy:cleanup', 'deploy:restart'

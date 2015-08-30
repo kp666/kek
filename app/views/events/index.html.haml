@@ -9,6 +9,9 @@
       .clearfix
       %br
 
+      - if @events.empty?
+        %p Bummer! No events to dislay. Check out later? :-)
+
       - @events.each do |event|
         .event
           .row
