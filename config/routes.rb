@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get '/login' => redirect('/users/sign_in')
 
   resources :events
+  resource :approve_users do
+    get :index
+    post :approve, on: :member
+  end
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :stories
