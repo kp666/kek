@@ -23,5 +23,6 @@
           %br
           %p= truncate_html story.description.html_safe, length: 1200, omission: (link_to '.. read more', story)
           .clearfix
-          %hr
+          - unless story == @stories.last
+            %hr
 
