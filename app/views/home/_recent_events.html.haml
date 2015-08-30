@@ -3,6 +3,8 @@
     .panel-heading
       %h3.panel-title Events
     .panel-body
+      - if @events.empty?
+        %p No events to display.
       - @events.each do |event|
         .event-info
           .media
