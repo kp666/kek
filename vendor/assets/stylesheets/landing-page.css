@@ -3,12 +3,12 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+/*
 body,
 html {
     width: 100%;
     height: 100%;
-}
+}*/
 
 
 .navbar-default a,
@@ -155,11 +155,6 @@ h6 {
     ul.banner-social-buttons > li:last-child {
         margin-bottom: 0;
     }
-}
-
-footer {
-    padding: 14px 0;
-    background-color: #f8f8f8;
 }
 
 p.copyright {

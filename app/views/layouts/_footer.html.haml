@@ -1,21 +1,8 @@
-%footer
+%footer.footer
   .container
     .row
-      .col-lg-10
-        %ul.list-inline.footer-links.pull-left
-          %li
-            %h5
-              %a{href: "#home"} Home
-          %li.footer-menu-divider 
-          %li
-            %h5
-              %a{href: "#about"} Press
-          %li.footer-menu-divider 
-          %li
-            %h5
-              %a{href: "#services"} About
-          %li.footer-menu-divider 
-          %li
-            %h5
-              %a{href: "#contact"} Contact
-
+      .col-lg-12
+        %div{class: ('footer-content' unless request.path == '/' )}
+          .pull-right
+            %p hello@kek.org.in
+          %p (C) 2015 kek.org.in
