@@ -31,6 +31,6 @@
               = link_to 'Approve users', approve_users_path
           %li
             = link_to 'Log out', destroy_user_session_path, method: :delete
-        / - else
-        /   %li
-        /     = link_to 'Login', new_user_session_path, class: set_active_class(new_user_session_path)
+        - else
+          %li
+            = link_to 'Login', new_user_session_path, class: set_active_class(new_user_session_path)
