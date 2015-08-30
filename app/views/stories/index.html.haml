@@ -12,7 +12,7 @@
             %p.heading= story.title
           %ul.list-inline.author-info
             %li
-              %em
+              %em{title: story.created_at}
                 = story.user.name
                 on
                 = story.created_at.strftime('%e %b')

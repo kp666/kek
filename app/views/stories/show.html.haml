@@ -1,24 +1,26 @@
 .container
   .row
-    .col-lg-12
-      %h2= @story.title
-      %ul.list-inline
-        - if @story.user == current_user
-          %li= link_to 'edit', edit_story_path(@story)
-          |
-          %li= link_to 'delete', @story, :method => :delete, :data => { :confirm => 'Are you sure?' }
-        %li
-          %em
-            Posted by
-            = @story.user.name
-            on
-            = @story.created_at.strftime('%e %b %Y')
+    .col-md-8.col-md-offset-2
+      .story.show-page
+        = link_to @story, class: 'title-link' do
+          %p.heading= @story.title
+        %ul.list-inline.author-info
+          %li
+            %em{title: @story.created_at}
+              = @story.user.name
+              on
+              = @story.created_at.strftime('%e %b')
+
+          - if @story.user == current_user
+            %li= link_to 'edit', edit_story_path(@story)
+            |
+            %li= link_to 'delete', @story, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
       %p= @story.description.html_safe
 
-    %br
-    #disqus_thread
+      %br
+      #disqus_thread
 
-%noscript
-  Please enable JavaScript to view the
-  %a{:href => "https://disqus.com/?ref_noscript", :rel => "nofollow"} comments
+      %noscript
+        Please enable JavaScript to view the
+        %a{:href => "https://disqus.com/?ref_noscript", :rel => "nofollow"} comments
