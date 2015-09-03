@@ -19,7 +19,7 @@
               %i.fa.fa-calendar.calendar-icon{ style: 'font-size: 80px' }
             .col-lg-11
               %p.heading= event.title
-              - if event.user == current_user
+              - if current_user && event.user == current_user
                 %ul.list-inline
                   %li= link_to 'edit', edit_event_path(event)
                   |
