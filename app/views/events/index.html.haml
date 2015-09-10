@@ -13,7 +13,7 @@
         %p Bummer! No events to dislay. Check out later? :-)
 
       - @events.each do |event|
-        .event
+        .event{ class: "#{'reduce-opacity' if Date.today > event.to}" }
           .row
             .col-lg-1
               %i.fa.fa-calendar.calendar-icon{ style: 'font-size: 80px' }
