@@ -4,26 +4,28 @@
       %h3.panel-title Events
     .panel-body
       - if @events.empty?
-        %p No events to display.
+        %p
+        No new events to display. Click
+        = link_to 'here', events_path
+        for past events.
       - @events.each do |event|
-        - unless Date.today > event.to
-          .event-info
-            .media
-              .media-left.pull-left
-                %i.fa.fa-calendar.calendar-icon{ style: 'font-size: 44px' }
+        .event-info
+          .media
+            .media-left.pull-left
+              %i.fa.fa-calendar.calendar-icon{ style: 'font-size: 44px' }
 
-              .media-body.recent-event
-                %h4.media-heading= event.title
-                %p
-                  %i.fa.fa-clock-o
-                  - if event.from.to_date == event.to.to_date
-                    = event.from.strftime('%e %b')
-                    = event.from.strftime('%I:%M %p')
-                  - else
-                    = event.from.strftime('%e %b')
-                    to
-                    = event.to.strftime('%e %b')
-                  %br
-                  - if event.location.present?
-                    %i.fa.fa-map-marker
-                    = event.location
+            .media-body.recent-event
+              %h4.media-heading= event.title
+              %p
+                %i.fa.fa-clock-o
+                - if event.from.to_date == event.to.to_date
+                  = event.from.strftime('%e %b')
+                  = event.from.strftime('%I:%M %p')
+                - else
+                  = event.from.strftime('%e %b')
+                  to
+                  = event.to.strftime('%e %b')
+                %br
+                - if event.location.present?
+                  %i.fa.fa-map-marker
+                  = event.location
