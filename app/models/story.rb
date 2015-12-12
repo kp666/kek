@@ -5,6 +5,8 @@ class Story < ActiveRecord::Base
 
   validates :title, presence: true
 
+  serialize :tags, Array
+
   def to_param
     permalink
   end

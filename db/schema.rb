@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830083450) do
+ActiveRecord::Schema.define(version: 20151212143913) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150830083450) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.string   "tags"
   end
 
   create_table "users", force: true do |t|

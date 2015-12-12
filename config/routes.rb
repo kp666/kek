@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :people, only: [:index]
+
   get '/faq' => 'faq#index'
   get '/contact' => 'contact#index'
   get '/about' => 'about#index'
