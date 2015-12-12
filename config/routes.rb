@@ -14,7 +14,15 @@ Rails.application.routes.draw do
   end
 
   mount Ckeditor::Engine => '/ckeditor'
-  resources :stories
+
+  resources :stories do
+    member do
+      post :pin
+      post :unpin
+      post :set_as_bio
+      post :unset_as_bio
+    end
+  end
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users

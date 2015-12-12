@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_story, only: [:show, :edit, :update, :destroy, :pin, :unpin, :set_as_bio, :unset_as_bio]
   before_action :check_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -20,6 +20,32 @@ class StoriesController < ApplicationController
   end
 
   def edit
+  end
+
+  def pin
+    @story.update_attribute(:pinned, true)
+
+    redirect_to people_path
+  end
+
+  def unpin
+    @story.update_attribute(:pinned, false)
+
+    redirect_to people_path
+  end
+
+  def set_as_bio
+    @story.tags << "bio"
+    @story.save
+
+    redirect_to people_path
+  end
+
+  def unset_as_bio
+    @story.tags -= ["bio"]
+    @story.save
+
+    redirect_to people_path
   end
 
   def create

@@ -20,6 +20,21 @@
               %li= link_to 'edit', edit_story_path(story)
               |
               %li= link_to 'delete', story, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            - if current_user.try(:role) == "admin"
+              |
+              %li
+                - if story.tags.include?('bio')
+                  = link_to 'Unset as bio', unset_as_bio_story_path(story), method: :post
+                - else
+                  = link_to 'Set as bio', set_as_bio_story_path(story), method: :post
+
+              - if params[:controller] == 'people'
+                |
+                %li
+                  - if story.pinned?
+                    = link_to 'Unpin', unpin_story_path(story), method: :post
+                  - else
+                    = link_to 'Pin', pin_story_path(story), method: :post
           %br
           %p= truncate_html story.description.html_safe, length: 1200, omission: (link_to '.. read more', story)
           .clearfix
