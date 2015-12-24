@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/bigbinary/boxy-cap.git
+  revision: 5c6205421804e6b943dd1a4d06eb0023757c0338
+  specs:
+    boxy-cap (0.0.19)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -200,6 +206,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.14.30)
+  boxy-cap!
   capistrano-rails
   capistrano-rbenv
   ckeditor
