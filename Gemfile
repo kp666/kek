@@ -48,6 +48,8 @@ gem 'pg', group: :production
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'boxy-cap', github: 'bigbinary/boxy-cap'
+
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rbenv', group: :development

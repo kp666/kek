@@ -38,15 +38,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-namespace :deploy do
+set :bundle_jobs, 4
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      execute 'kill -9 `cat /home/deployer/apps/kek/shared/tmp/pids/unicorn.pid`'
-      execute 'cd /home/deployer/apps/kek/current && ~/.rvm/bin/rvm default do bundle exec unicorn -E production -c config/unicorn.rb -D'
-    end
-  end
+after 'deploy:finishing', 'deploy:cleanup'
+after 'deploy:cleanup', 'unicorn:restart'
 
-end
-
-after 'deploy:cleanup', 'deploy:restart'
