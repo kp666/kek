@@ -7,7 +7,7 @@ set :repo_url, 'https://bitbucket.org/ershadk/kek.git'
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.2'
 
-
+set :monit_unicorn_name, 'unicorn_kek'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
