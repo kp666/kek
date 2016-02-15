@@ -19,7 +19,7 @@ class ApproveUsersController < ApplicationController
   private
 
   def find_unapproved_users
-    @users = User.where(approved: false)
+    @users = User.where(['approved IS NULL OR approved = ?', false])
   end
 
   def is_admin?
