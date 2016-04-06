@@ -8,6 +8,9 @@ CKEDITOR.editorConfig = function(config) {
   config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
   config.filebrowserImageUploadUrl = "/ckeditor/pictures";
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.extraPlugins = 'sourcedialog';
+  config.allowedContent = true;
+
   config.toolbar_Pure = [
     '/', {
       name: 'basicstyles',
@@ -26,7 +29,7 @@ CKEDITOR.editorConfig = function(config) {
       items: ['TextColor', 'BGColor']
     }, {
       name: 'insert',
-      items: ['Image', 'Table', 'HorizontalRule', 'PageBreak']
+      items: ['Image', 'Table', 'HorizontalRule', 'PageBreak', '-', 'Sourcedialog']
     }
   ];
   config.toolbar = 'Pure';
