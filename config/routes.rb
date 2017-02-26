@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :people, only: [:index]
+  resources :projects, only: [:index]
 
   get '/faq' => 'faq#index'
   get '/contact' => 'contact#index'
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
       post :unpin
       post :set_as_bio
       post :unset_as_bio
+      post :set_as_project
+      post :remove_from_project
     end
   end
 

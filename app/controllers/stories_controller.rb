@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :update, :destroy, :pin, :unpin, :set_as_bio, :unset_as_bio]
+  before_action :set_story, only: [:show, :edit, :update, :destroy, :pin, :unpin, :set_as_bio, :unset_as_bio,:set_as_project, :remove_from_project]
   before_action :check_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -25,24 +25,23 @@ class StoriesController < ApplicationController
   def pin
     @story.update_attribute(:pinned, true)
 
-    redirect_to people_path
+    redirect_to redirect_path
   end
 
   def unpin
     @story.update_attribute(:pinned, false)
-
-    redirect_to people_path
+    redirect_to redirect_path
   end
 
   def set_as_bio
-    @story.tags << "bio"
+    @story.tag_list.add("bio")
     @story.save
 
     redirect_to people_path
   end
 
   def unset_as_bio
-    @story.tags -= ["bio"]
+    @story.tag_list.remove("bio")
     @story.save
 
     redirect_to people_path
@@ -64,18 +63,34 @@ class StoriesController < ApplicationController
     respond_with(@story)
   end
 
+  def set_as_project
+    @story.tag_list.add("project")
+    @story.save
+    redirect_to projects_path
+  end
+
+  def remove_from_project
+    @story.tag_list.remove("project")
+    @story.save
+
+    redirect_to projects_path
+  end
+
   private
-    def set_story
-      @story = Story.where(permalink: params[:id]).first!
-    end
+  def redirect_path
+    params[:path] == 'projects' ? projects_path : people_path
+  end
+  def set_story
+    @story = Story.where(permalink: params[:id]).first!
+  end
 
-    def story_params
-      params.require(:story).permit(:title, :description)
-    end
+  def story_params
+    params.require(:story).permit(:title, :description)
+  end
 
-    def check_user
-      if @story.user != current_user
-        render text: 'You are a nasty cracker!'
-      end
+  def check_user
+    if @story.user != current_user
+      render text: 'You are a nasty cracker!'
     end
+  end
 end
