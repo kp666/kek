@@ -4,8 +4,8 @@ class Story < ActiveRecord::Base
   after_create :set_permalink
 
   validates :title, presence: true
-
-  serialize :tags, Array
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  #serialize :tags, Array
 
   def to_param
     permalink

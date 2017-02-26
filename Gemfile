@@ -54,6 +54,8 @@ gem 'boxy-cap', github: 'bigbinary/boxy-cap'
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rbenv', group: :development
 
+gem 'acts-as-taggable-on', '~> 4.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry-rails', group: :development

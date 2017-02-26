@@ -23,18 +23,24 @@
             - if current_user.try(:role) == "admin"
               |
               %li
-                - if story.tags.include?('bio')
+                - if story.tag_list.include?('bio')
                   = link_to 'Unset as bio', unset_as_bio_story_path(story), method: :post
                 - else
                   = link_to 'Set as bio', set_as_bio_story_path(story), method: :post
+              |
+              %li
+                -unless story.tag_list.include?('project')
+                  = link_to 'Set as project', set_as_project_story_path(story), method: :post unless story.tag_list.include?('project')
+                -else
+                  = link_to 'Remove from projects', remove_from_project_story_path(story), method: :post
 
-              - if params[:controller] == 'people'
+              - if params[:controller] == 'people' ||  params[:controller] == 'projects'
                 |
                 %li
                   - if story.pinned?
-                    = link_to 'Unpin', unpin_story_path(story), method: :post
+                    = link_to 'Unpin', unpin_story_path(story,path: params[:controller] ), method: :post
                   - else
-                    = link_to 'Pin', pin_story_path(story), method: :post
+                    = link_to 'Pin', pin_story_path(story, path: params[:controller] ), method: :post
           %br
           %p= truncate_html story.description.html_safe, length: 1200, omission: (link_to '.. read more', story)
           .clearfix
