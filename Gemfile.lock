@@ -150,7 +150,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    pg (1.2.3)
+    pg (0.21.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -262,7 +262,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.9.0)
   nokogiri
   paperclip (~> 4.2)
-  pg
+  pg (~> 0.18)
   pry-rails
   puma
   rails (~> 4.2.11)
@@ -277,4 +277,4 @@ DEPENDENCIES
   unicorn
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
