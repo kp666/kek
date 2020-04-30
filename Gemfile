@@ -19,7 +19,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem "letter_opener", :group => :development
 gem 'simple_form'
-gem 'ckeditor'
+gem 'ckeditor', "~> 4.1.2"
 gem 'truncate_html'
 gem "paperclip", "~> 4.2"
 gem 'nokogiri'
