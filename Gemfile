@@ -21,7 +21,7 @@ gem "letter_opener", :group => :development
 gem 'simple_form'
 gem 'ckeditor', "~> 4.1.2"
 gem 'truncate_html'
-gem "paperclip", "~> 4.2"
+gem "paperclip", "~> 6.1"
 gem 'nokogiri'
 gem 'rails_12factor'
 gem 'momentjs-rails', '>= 2.9.0'
