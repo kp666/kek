@@ -48,7 +48,8 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
-gem 'boxy-cap', github: 'bigbinary/boxy-cap'
+#404
+#gem 'boxy-cap', github: 'bigbinary/boxy-cap'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
